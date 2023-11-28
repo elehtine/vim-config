@@ -15,5 +15,7 @@ set scrolloff=5
 
 set nrformats-=octal
 
+setlocal shiftwidth=4 tabstop=4 expandtab autoindent
+
 syntax enable
 filetype plugin indent on
