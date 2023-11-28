@@ -1,0 +1,3 @@
+[submodule "pack/editor/start/vimtex"]
+	path = pack/editor/start/vimtex
+	url = git@github.com:lervag/vimtex.git
