@@ -10,3 +10,6 @@
 [submodule "pack/editor/start/vimwiki"]
 	path = pack/editor/start/vimwiki
 	url = git@github.com:vimwiki/vimwiki.git
+[submodule "pack/editor/start/vim-lsc"]
+	path = pack/editor/start/vim-lsc
+	url = https://github.com/natebosch/vim-lsc.git
