@@ -1,7 +1,3 @@
-unlet! skip_defaults_vim
-source $VIMRUNTIME/defaults.vim
-
-
 set backspace=indent,eol,start
 
 set history=200
@@ -19,4 +15,5 @@ set scrolloff=5
 
 set nrformats-=octal
 
+syntax enable
 filetype plugin indent on

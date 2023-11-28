@@ -1,3 +1,12 @@
 [submodule "pack/editor/start/vimtex"]
 	path = pack/editor/start/vimtex
 	url = git@github.com:lervag/vimtex.git
+[submodule "pack/editor/start/vim-snippets"]
+	path = pack/editor/start/vim-snippets
+	url = git@github.com:honza/vim-snippets.git
+[submodule "pack/editor/start/ultisnips"]
+	path = pack/editor/start/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "pack/editor/start/vimwiki"]
+	path = pack/editor/start/vimwiki
+	url = git@github.com:vimwiki/vimwiki.git
