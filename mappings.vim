@@ -27,4 +27,6 @@ autocmd CmdwinEnter *
   \ echohl None
 augroup END
 
-
+abbreviate prettier Prettier
+abbreviate javascript JavaScript
+abbreviate typescript TypeScript

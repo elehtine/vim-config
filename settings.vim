@@ -5,17 +5,21 @@ set ruler
 set showcmd
 set wildmenu
 set number
+set hidden
+set scrolloff=1
+set nrformats-=octal
+
+set matchpairs+=<:>
+set diffopt+=vertical
 
 set ttimeout
 set ttimeoutlen=100
-
 set display=truncate
 
-set scrolloff=5
-
-set nrformats-=octal
-
-setlocal shiftwidth=4 tabstop=4 expandtab autoindent
 
 syntax enable
 filetype plugin indent on
+
+setlocal shiftwidth=4 tabstop=4 expandtab autoindent
+
+autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
