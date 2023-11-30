@@ -16,10 +16,13 @@ set ttimeout
 set ttimeoutlen=100
 set display=truncate
 
+set shiftwidth=4 tabstop=4 expandtab autoindent
+set textwidth=78
 
 syntax enable
 filetype plugin indent on
 
-setlocal shiftwidth=4 tabstop=4 expandtab autoindent
-
-autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
+augroup template
+    autocmd BufNewFile * silent! 0read $HOME/.vim/templates/%:e.tmpl
+    autocmd BufNewFile Makefile silent! 0read $HOME/.vim/templates/Makefile
+augroup END
