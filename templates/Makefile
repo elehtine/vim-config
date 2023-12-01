@@ -9,9 +9,13 @@ SRCS = main.cpp
 run: $(appname)
 	./$(appname)
 
-$(appname):
+.PHONY: test
+test: $(appname)
+	./$(appname) < test_input.txt > user_output.txt
+
+$(appname): $(SRCS)
 	$(CXX) $(CXXFLAGS) -o $(appname) $(SRCS)
 
 .PHONY: clean
 clean:
-	$(RM) $(appname)
+	$(RM) $(appname) user_output.txt
