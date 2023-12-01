@@ -23,6 +23,7 @@ syntax enable
 filetype plugin indent on
 
 augroup template
+    autocmd!
     autocmd BufNewFile * silent! 0read $HOME/.vim/templates/%:e.tmpl
     autocmd BufNewFile Makefile silent! 0read $HOME/.vim/templates/Makefile
 augroup END
