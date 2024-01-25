@@ -12,6 +12,7 @@ run: $(appname)
 .PHONY: test
 test: $(appname)
 	./$(appname) < test_input.txt > user_output.txt
+	diff test_output.txt user_output.txt
 
 $(appname): $(SRCS)
 	$(CXX) $(CXXFLAGS) -o $(appname) $(SRCS)
