@@ -19,6 +19,8 @@ set display=truncate
 set shiftwidth=4 tabstop=4 expandtab autoindent
 set textwidth=78
 
+set path=.,,
+
 syntax enable
 filetype plugin indent on
 

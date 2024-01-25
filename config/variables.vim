@@ -20,12 +20,12 @@ let g:lsc_server_commands = {
             \       'command': 'clangd-12 --background-index',
             \       'suppress_stderr': v:true
             \    },
-            \    'python': 'pyls',
             \    'html': 'html-languageserver --stdio',
             \    'css': 'css-languageserver --stdio',
             \    'sh': 'bash-language-server start',
             \ }
 
+            " \    'python': 'pyls',
 
 let g:UltiSnipsExpandTrigger = '<tab>'
 " let g:UltiSnipsListSnippets = '<C-tab>'
