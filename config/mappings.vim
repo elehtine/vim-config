@@ -17,7 +17,7 @@ inoremap ,A Ä
 inoremap ,oa å
 inoremap ,oA Å
 inoremap ,o ö
-inoremap ,o Ö
+inoremap ,O Ö
 
 augroup vimHints
 au!

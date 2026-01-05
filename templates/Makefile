@@ -1,21 +1,33 @@
-appname = main
+CXX      := g++
+CXXFLAGS := -std=c++20 -Wall -Wextra -g -O2
+LDFLAGS  :=
+LDLIBS   :=
 
-CXX = g++
-CXXFLAGS = -Wall -g -std=c++20
+APP_NAME := main
+OBJ_DIR  := obj
+BIN_DIR  := bin
 
-SRCS = main.cpp
+SRCS     := main.cpp math.cpp
+OBJS     := $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
+DEPS     := $(OBJS:.o=.d)
 
-.PHONY: run
-run: $(appname)
-	./$(appname)
+.PHONY: all clean run
 
-.PHONY: test
-test: $(appname)
-	./$(appname) < test_input.txt > user_output.txt
+all: run
 
-$(appname): $(SRCS)
-	$(CXX) $(CXXFLAGS) -o $(appname) $(SRCS)
+run: $(BIN_DIR)/$(APP_NAME)
+	./$(BIN_DIR)/$(APP_NAME)
 
-.PHONY: clean
+$(BIN_DIR)/$(APP_NAME): $(OBJS) | $(BIN_DIR)
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
+$(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
+
+$(BIN_DIR) $(OBJ_DIR):
+	mkdir -p $@
+
+-include $(DEPS)
+
 clean:
-	$(RM) $(appname) user_output.txt
+	$(RM) -r $(OBJ_DIR) $(BIN_DIR)

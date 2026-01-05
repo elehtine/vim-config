@@ -1,4 +1,6 @@
 setlocal shiftwidth=2 tabstop=2
+setlocal path=,,.,src/**
+setlocal cinoptions+=j1
 
 let s:counter = 1
 function Commit()
