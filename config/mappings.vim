@@ -1,5 +1,7 @@
 inoremap jk <Esc>
 
+nnoremap gb :edit #<CR>
+
 map Q gq
 sunmap Q
 
