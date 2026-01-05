@@ -25,8 +25,22 @@ set path=.,,
 syntax enable
 filetype plugin indent on
 
+
+let s:root = expand('<sfile>:p:h:h')
+let s:templates = s:root . '/templates'
+
+function! s:LoadMakefile()
+    let choices = ['Select Layout:', '1. C++ (Default)', '2. LaTeX']
+    let idx = inputlist(choices)
+    let tpl = (idx == 2) ? 'Makefile.tex' : 'Makefile.cpp'
+    execute 'silent! 0read ' . s:templates . '/' . tpl | $delete
+endfunction
+
 augroup template
     autocmd!
-    autocmd BufNewFile * silent! 0read $HOME/.vim/templates/%:e.tmpl
-    autocmd BufNewFile Makefile silent! 0read $HOME/.vim/templates/Makefile
+    autocmd BufNewFile * execute 'silent! 0read ' . s:templates . '/skeleton.%:e' | $delete
+
+    autocmd BufNewFile .gitignore execute 'silent! 0read ' . s:templates . '/gitignore' | $delete
+    autocmd BufNewFile CMakeLists.txt execute 'silent! 0read ' . s:templates . '/CMakeLists.txt' | $delete
+    autocmd BufNewFile Makefile call s:LoadMakefile() | $delete
 augroup END

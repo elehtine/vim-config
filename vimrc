@@ -1,3 +1,3 @@
-source $HOME/.vim/config/mappings.vim
-source $HOME/.vim/config/settings.vim
-source $HOME/.vim/config/variables.vim
+runtime config/mappings.vim
+runtime config/settings.vim
+runtime config/variables.vim
