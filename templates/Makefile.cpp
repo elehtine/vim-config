@@ -7,7 +7,7 @@ APP_NAME := main
 OBJ_DIR  := obj
 BIN_DIR  := bin
 
-SRCS     := main.cpp math.cpp
+SRCS     := main.cpp
 OBJS     := $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 DEPS     := $(OBJS:.o=.d)
 

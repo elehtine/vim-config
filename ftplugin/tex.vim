@@ -1,9 +1,24 @@
 setlocal shiftwidth=2 tabstop=2 textwidth=69
 
-augroup quickmath_build
+augroup latex
     autocmd!
-    autocmd BufWritePost *.tex,*.sty if filereadable('Makefile') | make | endif
+    autocmd BufWritePost *.tex,*.sty if filereadable('Makefile') | make! | redraw! | cwindow | endif
 augroup END
+
+function! OpenPdf()
+    let l:target = expand('%:t:r') . '.pdf'
+
+    if !filereadable(l:target)
+        echoerr "Target PDF not found: " . l:target
+        return
+    endif
+
+    silent execute '!xdg-open ' . l:target . ' &'
+    redraw!
+endfunction
+
+command! View :call OpenPdf()
+nmap <leader>v :View<CR>
 
 function! Math()
     let l:save = winsaveview()
@@ -26,3 +41,4 @@ function! Math()
 endfunction
 
 command! Format :call Math()
+nmap <leader>m :Format<CR>

@@ -41,6 +41,7 @@ augroup template
     autocmd BufNewFile * execute 'silent! 0read ' . s:templates . '/skeleton.%:e' | $delete
 
     autocmd BufNewFile .gitignore execute 'silent! 0read ' . s:templates . '/gitignore' | $delete
+    autocmd BufNewFile .clang-format execute 'silent! 0read ' . s:templates . '/clang-format' | $delete
     autocmd BufNewFile CMakeLists.txt execute 'silent! 0read ' . s:templates . '/CMakeLists.txt' | $delete
-    autocmd BufNewFile Makefile call s:LoadMakefile() | $delete
+    autocmd BufNewFile Makefile call s:LoadMakefile()
 augroup END
