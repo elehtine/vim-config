@@ -1,0 +1,94 @@
+{
+    "alpha": {
+        "character": "α",
+        "mapping": "a"
+    },
+    "beta": {
+        "character": "β",
+        "mapping": "b"
+    },
+    "gamma": {
+        "character": "γ",
+        "mapping": "g"
+    },
+    "delta": {
+        "character": "δ",
+        "mapping": "d"
+    },
+    "eps": {
+        "character": "ε",
+        "mapping": "e"
+    },
+    "zeta": {
+        "character": "ζ",
+        "mapping": "z"
+    },
+    "eta": {
+        "character": "η",
+        "mapping": "y"
+    },
+    "theta": {
+        "character": "θ",
+        "mapping": "h"
+    },
+    "iota": {
+        "character": "ι",
+        "mapping": "i"
+    },
+    "kappa": {
+        "character": "κ",
+        "mapping": "k"
+    },
+    "lambda": {
+        "character": "λ",
+        "mapping": "l"
+    },
+    "mu": {
+        "character": "μ",
+        "mapping": "m"
+    },
+    "nu": {
+        "character": "ν",
+        "mapping": "n"
+    },
+    "xi": {
+        "character": "ξ",
+        "mapping": "x"
+    },
+    "pi": {
+        "character": "π",
+        "mapping": "p"
+    },
+    "rho": {
+        "character": "ρ",
+        "mapping": "r"
+    },
+    "sigma": {
+        "character": "σ",
+        "mapping": "s"
+    },
+    "tau": {
+        "character": "τ",
+        "mapping": "t"
+    },
+    "upsilon": {
+        "character": "υ",
+        "mapping": "u"
+    },
+    "phi": {
+        "character": "φ",
+        "mapping": "f"
+    },
+    "chi": {
+        "character": "χ",
+        "mapping": "x"
+    },
+    "psi": {
+        "character": "ψ",
+        "mapping": "q"
+    },
+    "omega": {
+        "character": "ω",
+        "mapping": "w"
+    }
+}

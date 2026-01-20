@@ -17,7 +17,7 @@ set ttimeoutlen=100
 set display=truncate
 
 set shiftwidth=4 tabstop=4 expandtab autoindent
-set textwidth=78
+set textwidth=65
 
 set path=.,,
 

@@ -1,0 +1,20 @@
+*own.txt* Own help file
+
+Here is my own help.
+
+|movement|            Vim movement
+|commands|            Vim commands
+
+*movement*
+
+Here is some movement:
+w       next word
+b       back to last word
+
+*commands*
+
+Run c++ program: >
+ :make
+<
+
+ vim:tw=78:ts=8:ft=help

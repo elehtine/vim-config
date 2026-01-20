@@ -1,22 +1,25 @@
 appname = main
 
 CXX = g++
-CXXFLAGS = -Wall -g -std=c++20
+CXXFLAGS = -Wall -g -std=c++2a
+DEPENDFLAGS = -std=c++2a
 
 SRCS = main.cpp
+OBJS = $(SRCS:.cpp=.o)
+
 
 .PHONY: run
 run: $(appname)
 	./$(appname)
 
-.PHONY: test
-test: $(appname)
-	./$(appname) < test_input.txt > user_output.txt
-	diff test_output.txt user_output.txt
+$(appname): $(OBJS) .depend
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
-$(appname): $(SRCS)
-	$(CXX) $(CXXFLAGS) -o $(appname) $(SRCS)
+.depend: $(SRCS)
+	$(CXX) $(DEPENDFLAGS) -MM $(SRCS) > $@ 2> /dev/null
+
+include .depend
 
 .PHONY: clean
 clean:
-	$(RM) $(appname) user_output.txt
+	$(RM) $(appname) .depend *.o

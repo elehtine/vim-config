@@ -1,3 +1,5 @@
+let g:vimtex_quickfix_ignore_filters = [ 'Overfull' ]
+
 let g:lsc_auto_map = 1
 let g:lsc_server_commands = {
             \ 'vim' : {
@@ -12,20 +14,20 @@ let g:lsc_server_commands = {
             \   'javascript': 'typescript-language-server --stdio',
             \   'typescript': 'typescript-language-server --stdio',
             \   'tex': 'texlab',
-            \   'cpp': {
-            \       'command': 'clangd-12 --background-index',
-            \       'suppress_stderr': v:true
-            \    },
-            \    'c': {
-            \       'command': 'clangd-12 --background-index',
-            \       'suppress_stderr': v:true
-            \    },
             \    'html': 'html-languageserver --stdio',
             \    'css': 'css-languageserver --stdio',
-            \    'sh': 'bash-language-server start',
             \ }
 
-            " \    'python': 'pyls',
+" \    'python': 'pyls',
+" \    'sh': 'bash-language-server start',
+" \   'cpp': {
+" \       'command': 'clangd-12 --background-index',
+" \       'suppress_stderr': v:true
+" \    },
+" \    'c': {
+" \       'command': 'clangd-12 --background-index',
+" \       'suppress_stderr': v:true
+" \    },
 
 let g:UltiSnipsExpandTrigger = '<tab>'
 " let g:UltiSnipsListSnippets = '<C-tab>'
