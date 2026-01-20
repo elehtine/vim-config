@@ -2,6 +2,7 @@
 
 constexpr char nl = '\n';
 
+
 int main() {
   std::cout << "Hello World!" << nl;
 }

@@ -1,0 +1,20 @@
+PROJECT   := main
+BUILD_DIR := build
+
+LATEXMK   := latexmk
+LFLAGS    := -pdf -pdflatex="pdflatex -interaction=nonstopmode" \
+             -use-make -output-directory=$(BUILD_DIR)
+
+.PHONY: all clean
+
+all: $(PROJECT).pdf
+
+$(PROJECT).pdf: $(PROJECT).tex | $(BUILD_DIR)
+	$(LATEXMK) $(LFLAGS) $<
+	cp $(BUILD_DIR)/$@ .
+
+$(BUILD_DIR):
+	mkdir -p $@
+
+clean:
+	rm -rf $(BUILD_DIR)

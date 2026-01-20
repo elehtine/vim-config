@@ -1,36 +1,44 @@
 setlocal shiftwidth=2 tabstop=2 textwidth=69
 
-augroup pdf
+augroup latex
     autocmd!
-    autocmd BufWritePost *.tex make
+    autocmd BufWritePost *.tex,*.sty if filereadable('Makefile') | make! | redraw! | cwindow | endif
 augroup END
 
-" let s:greek_file = expand('<sfile>:h') . '/greek.json'
-" let s:greek = json_decode(join(readfile(s:greek_file), ''))
-" 
-" echo s:greek_file
-" echo s:greek
-" 
-" for [letter, value] in items(s:greek)
-"     let s:character = value['character']
-"     let s:mapping = value['mapping']
-" 
-"     let s:command = 'inoremap <buffer><nowait><expr>'
-"     let s:lhs = '...' . s:mapping
-"     let s:rhs = escape('\\' . letter, '\')
-"     execute s:command . ' ' . s:lhs  . ' ' . s:rhs
-" endfor
-" 
-" function FixCopy()
-"     for [letter, value] in items(s:greek)
-"         let l:greek = value['greek']
-"         let l:mapping = value['mapping']
-" 
-"         let l:command = 'inoremap <buffer><nowait><expr>'
-"         let l:lhs = '...' . l:mapping
-"         let l:rhs = escape('\' . letter, '\')
-"         echo l:command . ' ' . l:lhs  . ' ' . l:rhs
-"     endfor
-" endfunction
-" 
-" command FixCopy call FixCopy()
+function! OpenPdf()
+    let l:target = expand('%:t:r') . '.pdf'
+
+    if !filereadable(l:target)
+        echoerr "Target PDF not found: " . l:target
+        return
+    endif
+
+    silent execute '!xdg-open ' . l:target . ' &'
+    redraw!
+endfunction
+
+command! View :call OpenPdf()
+nmap <leader>v :View<CR>
+
+function! Math()
+    let l:save = winsaveview()
+
+    silent! %s/→/\\rightarrow/g
+    silent! %s/α/\\alpha/g
+    silent! %s/β/\\beta/g
+    silent! %s/γ/\\gamma/g
+    silent! %s/δ/\\delta/g
+    silent! %s/ε/\\epsilon/g
+    silent! %s/π/\\pi/g
+    silent! %s/ρ/\\rho/g
+    silent! %s/∈/\\in/g
+    silent! %s/−/-/g
+    silent! %s/≤/\\leq/g
+    silent! %s/≥/\\geq/g
+    silent! %s/∞/\\infty/g
+
+    call winrestview(l:save)
+endfunction
+
+command! Format :call Math()
+nmap <leader>m :Format<CR>
