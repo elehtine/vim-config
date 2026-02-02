@@ -13,3 +13,6 @@
 [submodule "pack/editor/start/vim-lsc"]
 	path = pack/editor/start/vim-lsc
 	url = https://github.com/natebosch/vim-lsc.git
+[submodule "pack/editor/start/vim-python-pep8-indent"]
+	path = pack/editor/start/vim-python-pep8-indent
+	url = https://github.com/Vimjas/vim-python-pep8-indent.git
