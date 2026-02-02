@@ -22,11 +22,11 @@ inoremap ,o ö
 inoremap ,O Ö
 
 augroup vimHints
-au!
-autocmd CmdwinEnter *
-  \ echohl Todo |
-  \ echo gettext('You discovered the command-line window! You can close it with ":q".') |
-  \ echohl None
+    au!
+    autocmd CmdwinEnter *
+                \ echohl Todo |
+                \ echo gettext('You discovered the command-line window! You can close it with ":q".') |
+                \ echohl None
 augroup END
 
 abbreviate prettier Prettier
