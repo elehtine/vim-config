@@ -12,14 +12,17 @@ cnoremap <C-D> <Delete>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 
+inoremap <leadre>a ä
+inoremap <leadre>A Ä
+inoremap <leadre>oa å
+inoremap <leadre>oA Å
+inoremap <leadre>o ö
+inoremap <leadre>O Ö
 
-" Characters in Finnish
-inoremap ,a ä
-inoremap ,A Ä
-inoremap ,oa å
-inoremap ,oA Å
-inoremap ,o ö
-inoremap ,O Ö
+nnoremap <leader>w :match Error /\v +$/<cr>
+nnoremap <leader>W :match none<cr>
+
+nnoremap <leader>n :setlocal number!<cr>
 
 augroup vimHints
     au!
