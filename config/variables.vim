@@ -1,4 +1,5 @@
 let g:mapleader = ","
+let g:maplocalleader = '\'
 
 let g:UltiSnipsExpandTrigger = '<tab>'
 " let g:UltiSnipsListSnippets = '<C-tab>'
