@@ -22,6 +22,10 @@ set textwidth=65
 
 set path=.,,
 
+set splitbelow splitright
+
+set clipboard=unnamedplus
+
 syntax enable
 filetype plugin indent on
 
